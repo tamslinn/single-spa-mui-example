@@ -10,10 +10,7 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    externals: {
-      react: "react",
-      "react-dom": "react-dom",
-      "@example/mui": "@example/mui",
-    },
+    // externals must be an array in order for merge to work with the defaults from webpack-config-single-spa-react
+    externals: ["@example/mui"],
   });
 };
